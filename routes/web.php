@@ -21,8 +21,13 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// 追加
+Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+
+// 最初からあったもの
 Route::prefix('items')->group(function () {
     Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
+
 });
