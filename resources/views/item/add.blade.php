@@ -42,6 +42,10 @@
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">登録</button>
                     </div>
+                    <!-- 追加 -->
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">削除</button>
+                    </div>
                 </form>
             </div>
         </div>
