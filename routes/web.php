@@ -22,8 +22,17 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// 追加
+ // 追加
+
+ // 登録
+Route::get('/user', [App\Http\Controllers\UserController::class, 'index']);
+// 編集
 Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+ // 保存
+Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update']);
+ // 削除
+Route::get('/user/delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
+
 
 // 最初からあったもの
 Route::prefix('items')->group(function () {
