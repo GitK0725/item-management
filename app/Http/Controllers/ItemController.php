@@ -66,7 +66,7 @@ class ItemController extends Controller
 */
     public function update(Request $request)
     {
-        $item=item::find($request->id)
+        $item=item::find($request->id);
         $item->name=$request->input('name');
         $item->type=$request->input('type');
         $item->detail=$request->input('detail');
