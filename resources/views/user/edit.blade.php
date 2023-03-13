@@ -8,7 +8,7 @@
 
 @section('content')
 登録番号：{{ $user->id }}
-  <form action="/user/update" method="post">
+  <form action="/users/update" method="post">
    <table class="table">
    @csrf
     <tr>

@@ -11,7 +11,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $rows=User::all();
-        return view('user.index',['rows'=>$rows]);
+        return view('/users',['rows'=>$rows]);
     }
 
     public function update(Request $request)
@@ -23,20 +23,20 @@ class UserController extends Controller
         ]);
     
     //登録処理後、一覧画面に遷移する
-    return redirect('/user');
+    return redirect('/users');
     }
 
     public function edit(Request $request)
     {
         $user=User::find($request->id);
-        return view('user.edit',['user'=>$user]);
+        return view('/users',['/users'=>$user]);
     }
     // 削除のコマンド
     public function delete(Request $request)
     {
         $user=User::find($request->id)->delete();
 
-        return redirect('/user');
+        return redirect('/users');
     }
 }
 

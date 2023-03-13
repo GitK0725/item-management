@@ -233,9 +233,10 @@ return [
 
         [
             'text' => 'ユーザー一覧',
-            'icon' => 'fas fa-home',
-            'route' => 'user',
-        ],
+            'url' => 'users',
+            'icon' => 'fa-person',
+        ]
+        
 
         // AdminLTEデフォルト
         /*
