@@ -7,23 +7,32 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function edit(User $user)
+    public function index()
     {
-        return view('users.edit', compact('user'));
+        $users = User::all();
+    
+        return view('user.index', ['users' => $users]);
     }
 
-    public function update(Request $request, User $user)
+    public function edit(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,' . $user->id,
-            'password' => 'nullable|string|min:6|confirmed',
+        $user=User::find($request->id);
+        return view('user.edit',['user'=>$user]);
+    }
+    public function update(Request $request)
+    {
+        $user=User::find($request->id)->update([
+            'name' => $request->name,
+            'role' => $request->role,
+            'email' => $request->email,
         ]);
+        return redirect('/users');
+    }
 
-        $user->update($validated);
-
-        return redirect()->route('users.edit', $user)->with('success', 'User updated successfully.');
+        public function delete(Request $request)
+        {
+            $user=User::find($request->id)->delete();
+            return redirect('/user');
     }
 
 }
-
