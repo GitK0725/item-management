@@ -28,12 +28,14 @@ Route::prefix('items')->group(function () {
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
 });
 
+
 Route::prefix('users')->group(function () {
     // ユーザー一覧画面
-    Route::get('/', [App\Http\Controllers\UserController::class],'index');
+    Route::get('/', [App\Http\Controllers\UserController::class,'index']);
     
     // ユーザー編集画面
-    Route::get('/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+    Route::get('/edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
     Route::post('/update', [App\Http\Controllers\UserController::class, 'update']);
     Route::get('/delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
+
 });
