@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +30,10 @@ Route::prefix('items')->group(function () {
 
 Route::prefix('users')->group(function () {
     // ユーザー一覧画面
-    Route::get('/', '');
+    Route::get('/', [App\Http\Controllers\UserController::class],'index');
     
     // ユーザー編集画面
-    Route::get('/{id}/edit', 'UserController@edit');
+    Route::get('/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+    Route::post('/update', [App\Http\Controllers\UserController::class, 'update']);
+    Route::get('/delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
 });
