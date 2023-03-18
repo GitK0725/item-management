@@ -27,5 +27,6 @@
             <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
+  <a class="btn btn-secondary" href="/user/delete/{{ $user->id }}">削除</a>
     </form>
 @stop
