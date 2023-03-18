@@ -236,11 +236,6 @@ return [
             'icon' => 'fas fa-users' 
         ],
 
-        [
-            'text' => 'ユーザ編集',
-            'url'  => 'users',
-            'icon' => 'fas fa-users' 
-    ],
 
         // AdminLTEデフォルト
         /*

@@ -26,7 +26,6 @@
             <td>{{ $user->email }}</td>
             <td>{{ $user->created_at }}</td>
             <td>{{ $user->updated_at }}</td>
-            <td><a href="{{ route('users.edit', $user->id) }}">編集</a></td>
         </tr>
         @endforeach
     </tbody>
