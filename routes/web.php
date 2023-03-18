@@ -23,6 +23,8 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // 商品登録
 Route::prefix('items')->group(function () {
+
+    
     Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
@@ -35,7 +37,7 @@ Route::prefix('users')->group(function () {
     
     // ユーザー編集画面
     Route::get('/edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
-    Route::post('/update', [App\Http\Controllers\UserController::class, 'update']);
-    Route::get('/delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
+    Route::post('/update', [App\Http\Controllers\UserController::class, 'update'])->name('users.edit');
+    Route::get('/delete/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('users.edit');
 
 });
