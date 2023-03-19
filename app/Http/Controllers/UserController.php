@@ -11,12 +11,14 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $users = User::all();
-    
         return view('user.index', ['users' => $users]);
+
+        $rows=User::all();
+        return view('user.index',['rows'=>$rows]);
     }
 
     public function edit(Request $request)
