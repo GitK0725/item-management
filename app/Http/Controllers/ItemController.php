@@ -29,7 +29,7 @@ class ItemController extends Controller
             ->select()
             ->get();
 
-        return view('item.index', compact('items'));
+        return view('items.index', compact('items'));
     }
 
     /**
@@ -46,7 +46,7 @@ class ItemController extends Controller
 
             // 商品登録
             Item::create([
-                'user_id' => Auth::user()->id,
+                'user_id' => Auth::user()->id=1,
                 'name' => $request->name,
                 'type' => $request->type,
                 'detail' => $request->detail,
@@ -55,6 +55,28 @@ class ItemController extends Controller
             return redirect('/items');
         }
 
-        return view('item.add');
+        return view('items.add');
+    }
+    public function edit(Request $request)
+    {
+        $item=Item::find($request->id);
+        return view('items.edit',['item'=>$item]);
+
+    }
+
+    public function update(Request $request)
+    {
+        $item=Item::find($request->id)->update([
+            'name' => $request->name,
+            'type' => $request->type,
+            'edetail' => $request->detail,
+        ]);
+        return redirect('/items');
+    }
+
+    public function delete(Request $request)
+        {
+        $item=Item::find($request->id)->delete();
+        return redirect('/items');
     }
 }
