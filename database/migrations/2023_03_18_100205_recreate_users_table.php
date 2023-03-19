@@ -19,7 +19,7 @@ class RecreateUsersTable extends Migration
             $table->string('email')->charset('utf8')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('role');
+            $table->string('role')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });
