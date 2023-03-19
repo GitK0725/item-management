@@ -30,6 +30,11 @@
         <td><input type="radio" name="role" value="0" @if ($user->role == 0) checked @endif required>利用者</td></td> 
         </div>
         <button type="submit" class="btn btn-primary">更新</button>
-        <a class="btn btn-secondary" href="/user/delete/{{ $user->id }}">削除</a>
     </form>
+    <form method="POST" action="{{ route('users.delete') }}">
+    @csrf
+        <input type="hidden" name="id" value="{{ $user->id }}">
+        <button type="submit" class="btn btn-secondry">削除</button> 
+    </form>
+
 @stop

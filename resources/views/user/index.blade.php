@@ -28,7 +28,7 @@
             <td>{{ $user->role }}</td>
             <td>{{ $user->created_at }}</td>
             <td>{{ $user->updated_at }}</td>
-            <td><a class="btn btn-primary" href="/user/edit/{{ $user->id }}">編集</a></td>
+            <td><a class="btn btn-primary" href="/users/edit/{{ $user->id }}">編集</a></td>
         </tr>
         @endforeach
     </tbody>
