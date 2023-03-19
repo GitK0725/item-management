@@ -13,6 +13,7 @@
             <th>ID</th>
             <th>名前</th>
             <th>メールアドレス</th>
+            <th>権限</th>
             <th>作成日</th>
             <th>更新日</th>
             <th></th>
@@ -24,9 +25,11 @@
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
+            <td>{{ $user->role }}</td>
             <td>{{ $user->created_at }}</td>
             <td>{{ $user->updated_at }}</td>
         </tr>
+
         @endforeach
     </tbody>
 </table>
