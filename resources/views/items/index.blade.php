@@ -37,7 +37,9 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->detail }}</td>
+                                    @if(Auth::user()->role == 1)
                                     <td><a href="/items/edit/{{$item->id}}">編集</a></td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>

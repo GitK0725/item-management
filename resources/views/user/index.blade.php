@@ -28,7 +28,9 @@
             <td>{{ $user->role }}</td>
             <td>{{ $user->created_at }}</td>
             <td>{{ $user->updated_at }}</td>
+            @if(Auth::user()->role == 1)
             <td><a class="btn btn-primary" href="/users/edit/{{ $user->id }}">編集</a></td>
+            @endif
         </tr>
         @endforeach
     </tbody>
