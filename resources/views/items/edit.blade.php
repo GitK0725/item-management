@@ -29,10 +29,11 @@
         </div>
         <button type="submit" class="btn btn-primary">更新</button>
     </form>
-    <form method="POST" action="{{ route('items.delete' , ) }}">
+    <form method="post" action="{{ route('items.delete') }}">
+    
     @csrf
         <input type="hidden" name="id" value="{{ $item->id }}">
-        <button type="submit" class="btn btn-danger">削除</button>
+        <button type="submit" class="btn btn-secondry">削除</button>
     </form>
 
 @stop
