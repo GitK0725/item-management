@@ -25,7 +25,7 @@
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
-            <td>{{ $user->role }}</td>
+            <td>@if($user->role) 管理者 @else 利用者 @endif</td>
             <td>{{ $user->created_at }}</td>
             <td>{{ $user->updated_at }}</td>
             @if(Auth::user()->role == 1)
