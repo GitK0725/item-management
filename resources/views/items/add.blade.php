@@ -28,10 +28,16 @@
                             <input type="text" class="form-control" id="name" name="name" placeholder="名前">
                         </div>
 
-                        <div class="form-group">
-                            <label for="type">種別</label>
-                            <input type="number" class="form-control" id="type" name="type" placeholder="ボール、ウェア、シューズ...">
-                        </div>
+                    <p>種別
+                    <select name="type" class="form-control" required>
+                        <option value=""></option>
+                        <option value="1">ボール</option>
+                        <option value="2">ウェア</option>
+                        <option value="3">シューズ</option>
+                        <option value="4">その他</option>
+                    </select>
+                    </p>
+
 
                         <div class="form-group">
                             <label for="detail">詳細</label>

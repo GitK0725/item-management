@@ -21,6 +21,7 @@
                 <option value="1" @if($item->type== 1) selected @endif >ボール</option>
                 <option value="2" @if($item->type== 2) selected @endif >ウェア</option>
                 <option value="3" @if($item->type== 3) selected @endif >シューズ</option>
+                <option value="4" @if($item->type== 4) selected @endif >その他</option>
             </select>
         </div>
         <div class="form-group">
