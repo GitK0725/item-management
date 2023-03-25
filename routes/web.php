@@ -32,7 +32,7 @@ Route::prefix('items')->group(function () {
     Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit'])->name('items.edit'); 
     Route::post('/update', [App\Http\Controllers\ItemController::class, 'update'])->name('items.update');
     // 削除処理
-    Route::post('/delete', [App\Http\Controllers\ItemController::class, 'delete']);
+    Route::post('/delete', [App\Http\Controllers\ItemController::class, 'delete'])->name('items.delete');
 });
 
 

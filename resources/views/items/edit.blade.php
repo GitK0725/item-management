@@ -17,7 +17,7 @@
         <div class="form-group">
             <label for="type">種別</label>
             {{-- <input type="number" name="type" id="type" class="form-control" value="{{ $item->type }}"> --}}
-            <select class="form-control" name="type" id="">
+            <select class="form-control" name="type" required>
                 <option value="1">ボール</option>
                 <option value="2">ウェア</option>
                 <option value="3">シューズ</option>
@@ -29,10 +29,10 @@
         </div>
         <button type="submit" class="btn btn-primary">更新</button>
     </form>
-    <form method="POST" action>
+    <form method="POST" action="{{ route('items.delete' , ) }}">
     @csrf
         <input type="hidden" name="id" value="{{ $item->id }}">
-        {{--<button type="submit" class="btn btn-secondry">削除</button>--}}
+        <button type="submit" class="btn btn-danger">削除</button>
     </form>
 
 @stop
