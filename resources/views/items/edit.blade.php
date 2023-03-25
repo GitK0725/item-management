@@ -18,9 +18,9 @@
             <label for="type">種別</label>
             {{-- <input type="number" name="type" id="type" class="form-control" value="{{ $item->type }}"> --}}
             <select class="form-control" name="type" required>
-                <option value="1">ボール</option>
-                <option value="2">ウェア</option>
-                <option value="3">シューズ</option>
+                <option value="1" @if($item->type== 1) selected @endif >ボール</option>
+                <option value="2" @if($item->type== 2) selected @endif >ウェア</option>
+                <option value="3" @if($item->type== 3) selected @endif >シューズ</option>
             </select>
         </div>
         <div class="form-group">
@@ -36,4 +36,14 @@
         <button type="submit" class="btn btn-secondry">削除</button>
     </form>
 
+
+    <!-- <td>
+	@if(Auth::user(1)->id === $item->user_id)
+	<form method="POST" action="/item{{ $item->id }}">
+	@method('delete')
+	@csrf
+	<button type="submit" class="btn btn-danger">削除</button>
+	</form>
+	@endif
+</td> -->
 @stop
