@@ -26,6 +26,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>名前</th>
+                                <th>ステータス</th>
                                 <th>種別</th>
                                 <th>詳細</th>
                             </tr>
@@ -35,6 +36,7 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
+                                    <td>@if($item->status=='active') 有効 @else 無効 @endif</td>
                                     <td>@if($item->type=='1') ボール @elseif ($item->type=='2') ウェア @elseif ($item->type=='3') シューズ @elseif ($item->type=='4') その他 @endif</td>
                                     <td>{{ $item->detail }}</td>
                                     @if(Auth::user()->role == 1)

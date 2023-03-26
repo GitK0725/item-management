@@ -15,6 +15,14 @@
             <input type="text" name="name" id="name" class="form-control" value="{{ $item->name }}">
         </div>
         <div class="form-group">
+            <label for="status">ステータス</label>
+            {{-- <input type="text" name="status" id="status" class="form-control" value="{{ $item->status }}"> --}}
+            <select class="form-control" name="status" required>
+                <option value="active" @if($item->status=="active") selected @endif >有効</option>
+                <option value="invalid" @if($item->status=="invalid") selected @endif >無効</option>
+            </select>
+            </div>
+        <div class="form-group">
             <label for="type">種別</label>
             {{-- <input type="number" name="type" id="type" class="form-control" value="{{ $item->type }}"> --}}
             <select class="form-control" name="type" required>
@@ -34,7 +42,7 @@
     
     @csrf
         <input type="hidden" name="id" value="{{ $item->id }}">
-        <button type="submit" class="btn btn-secondry">削除</button>
+        <button type="submit" class="btn btn-danger">削除</button>
     </form>
 
 
