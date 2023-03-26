@@ -23,11 +23,13 @@ class ItemController extends Controller
      */
     public function index()
     {
-        // 商品一覧取得
+     // 商品一覧取得
         $items = Item
-            ::where('items.status', 'active')
-            ->select()
-            ->get();
+            // ::where('items.status', 'active')
+            // ->select()
+            // ->get();
+
+            ::orderBy('created_at', 'asc')->get();
 
         return view('items.index', compact('items'));
     }
@@ -70,7 +72,8 @@ class ItemController extends Controller
         $item=Item::find($request->id)->update([
             'name' => $request->name,
             'type' => $request->type,
-            'edetail' => $request->detail,
+            'status' => $request->status,
+            'detail' => $request->detail,
         ]);
         return redirect('/items');
     }
