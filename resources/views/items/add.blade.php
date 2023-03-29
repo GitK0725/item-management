@@ -12,9 +12,9 @@
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
-                       @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                       @endforeach
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
                     </ul>
                 </div>
             @endif
@@ -26,6 +26,11 @@
                         <div class="form-group">
                             <label for="name">名前</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="detail">ステータス</label>
+                            <input type="text" class="form-control" id="status" name="status" placeholder="有効or無効">
                         </div>
 
                     <p>種別
