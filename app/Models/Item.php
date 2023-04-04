@@ -24,8 +24,10 @@ class Item extends Model
      *
      * @var array<int, string>
      */
-    protected $hidden = [
+    protected $attributes = [
+        'status' => '無効',
     ];
+        
 
     /**
      * The attributes that should be cast.
