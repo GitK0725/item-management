@@ -70,13 +70,40 @@ class ItemController extends Controller
     public function update(Request $request)
     {
         $item=Item::find($request->id)->update([
-            'name' => $request->name,
+            'name' => $request->name ??'',
             'type' => $request->type,
             'status' => $request->status,
             'detail' => $request->detail,
-        ]);
+            ]);
         return redirect('/items');
     }
+
+//     public function update(Request $request)
+// {
+//     $validator = Validator::make($request->all(), [
+//         'name' => 'required|string|max:255',
+//         'type' => 'required|string|max:255',
+//         'status' => 'required|in:active,inactive',
+//         'detail' => 'nullable|string',
+//     ]);
+
+//     if ($validator->fails()) {
+//         return redirect()
+//             ->back()
+//             ->withErrors($validator)
+//             ->withInput();
+//     }
+
+//     $item = Item::find($request->id);
+//     $item->name = $request->name;
+//     $item->type = $request->type;
+//     $item->status = $request->status;
+//     $item->detail = $request->detail;
+//     $item->save();
+
+//     return redirect('/items');
+// }
+
 
     public function delete(Request $request)
         {
