@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'サッカー用具専門店')
 
 @section('content_header')
     <h1>サッカー用具専門店</h1>
