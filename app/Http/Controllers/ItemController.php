@@ -44,6 +44,7 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
+
             ]);
 
             // 商品登録
@@ -69,41 +70,23 @@ class ItemController extends Controller
 
     public function update(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required:items|max:255',
+            'detail' => 'required',
+        ],[
+                'name.required' => '商品名を入力してください。',
+                'detail.required' => '詳細を入力してください。',
+            ]);
+        
         $item=Item::find($request->id)->update([
-            'name' => $request->name ??'',
+
+            'name' => $request->name,
             'type' => $request->type,
             'status' => $request->status,
             'detail' => $request->detail,
             ]);
         return redirect('/items');
     }
-
-//     public function update(Request $request)
-// {
-//     $validator = Validator::make($request->all(), [
-//         'name' => 'required|string|max:255',
-//         'type' => 'required|string|max:255',
-//         'status' => 'required|in:active,inactive',
-//         'detail' => 'nullable|string',
-//     ]);
-
-//     if ($validator->fails()) {
-//         return redirect()
-//             ->back()
-//             ->withErrors($validator)
-//             ->withInput();
-//     }
-
-//     $item = Item::find($request->id);
-//     $item->name = $request->name;
-//     $item->type = $request->type;
-//     $item->status = $request->status;
-//     $item->detail = $request->detail;
-//     $item->save();
-
-//     return redirect('/items');
-// }
-
 
     public function delete(Request $request)
         {

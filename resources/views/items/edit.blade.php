@@ -7,7 +7,16 @@
 @stop
 
 @section('content')
-    <form method="POST" action="{{ route('items.update') }}">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+            @endif
+        <form method="POST" action="{{ route('items.update') }}">
         @csrf
         <input type="hidden" name="id" value="{{ $item->id }}">
         <div class="form-group">

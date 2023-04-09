@@ -28,10 +28,6 @@
                             <input type="text" class="form-control" id="name" name="name" placeholder="名前">
                         </div>
 
-                        <!-- <div class="form-group">
-                            <label for="detail">ステータス</label>
-                            <input type="text" class="form-control" id="status" name="status" placeholder="有効or無効">
-                        </div> -->
 
                     <p>種別
                     <select name="type" class="form-control" required>
