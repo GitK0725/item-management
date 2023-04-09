@@ -44,15 +44,4 @@
         <input type="hidden" name="id" value="{{ $item->id }}">
         <button type="submit" class="btn btn-danger">削除</button>
     </form>
-
-
-    <!-- <td>
-	@if(Auth::user(1)->id === $item->user_id)
-	<form method="POST" action="/item{{ $item->id }}">
-	@method('delete')
-	@csrf
-	<button type="submit" class="btn btn-danger">削除</button>
-	</form>
-	@endif
-</td> -->
 @stop
